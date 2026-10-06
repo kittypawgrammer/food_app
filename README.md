@@ -1,20 +1,21 @@
 # 🍔 food_app
 
-A learning project: **Angular 17 (module-based)** frontend + **Node.js / Express** backend,
+A learning project: **Angular 17 (module-based)** frontend + **Node.js / Express (TypeScript)** backend,
 built step by step to learn backend concepts (auth from basic login to JWT, CRUD, roles, orders, …).
 
 ```
 food_app/
-├── backend/            Node.js + Express API
+├── backend/            Node.js + Express + TypeScript API
 │   └── src/
-│       ├── server.js       starts the server
-│       ├── app.js          express app, middleware, routes
+│       ├── server.ts       starts the server
+│       ├── app.ts          express app, middleware, routes
 │       ├── config/         env variables
 │       ├── routes/         URL → controller mapping
 │       ├── controllers/    request handling logic
 │       ├── middlewares/    404 + error handler (auth later)
 │       ├── models/         database models (later)
-│       └── utils/
+│       ├── utils/          AppError etc.
+│       └── types/          shared TS types/interfaces
 └── frontend/           Angular 17 (NgModules, lazy-loaded features)
     └── src/app/
         ├── core/           singletons: services, guards, interceptors (CoreModule)
@@ -52,3 +53,11 @@ The home page shows "Backend status: ok" when both are running.
 8. Roles (customer / restaurant owner / admin)
 9. Orders: cart → order → status flow
 10. Extras: uploads, pagination & search, rate limiting, tests, deployment
+
+## Backend scripts
+| Command | What it does |
+|---|---|
+| `npm run dev` | run `src/server.ts` with auto-reload (tsx watch) |
+| `npm run typecheck` | check types without building |
+| `npm run build` | compile TS → `dist/` |
+| `npm start` | run the compiled `dist/server.js` |
