@@ -1,46 +1,43 @@
 # 🍔 food_app
 
-A learning project: **Angular 17 (module-based)** frontend + **Node.js / Express (TypeScript)** backend,
-built step by step to learn backend concepts (auth from basic login to JWT, CRUD, roles, orders, …).
+A learning project: **Next.js (App Router)** frontend + **Node.js / Express (TypeScript)** backend + **PostgreSQL (Docker)**,
+built step by step to learn core backend and frontend concepts.
 
 ```
 food_app/
-├── backend/            Node.js + Express + TypeScript API
+├── backend/            Node.js + Express + TypeScript API (Port 5000)
 │   └── src/
 │       ├── server.ts       starts the server
 │       ├── app.ts          express app, middleware, routes
 │       ├── config/         env variables
 │       ├── routes/         URL → controller mapping
 │       ├── controllers/    request handling logic
-│       ├── middlewares/    404 + error handler (auth later)
-│       ├── models/         database models (later)
+│       ├── middlewares/    404 + error handler
+│       ├── models/         database models
 │       ├── utils/          AppError etc.
 │       └── types/          shared TS types/interfaces
-└── frontend/           Angular 17 (NgModules, lazy-loaded features)
-    └── src/app/
-        ├── core/           singletons: services, guards, interceptors (CoreModule)
-        ├── shared/         reusable components (SharedModule) e.g. navbar
-        └── features/       home, auth (login/register), restaurants — lazy modules
+└── frontend/           Next.js 16 + React 19 + Tailwind CSS (Port 3000)
+    └── src/
+        ├── app/            App router pages & layouts
+        └── components/     reusable UI components
 ```
 
 ## Run it
 
-**Backend** (http://localhost:3000)
+**Backend** (http://localhost:5000)
 ```bash
 cd backend
 npm install
-cp .env.example .env
 npm run dev
 ```
-Check: http://localhost:3000/api/health
+Check: http://localhost:5000/api/health or http://localhost:5000/api/restaurants
 
-**Frontend** (http://localhost:4200)
+**Frontend** (http://localhost:3000)
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
 ```
-The home page shows "Backend status: ok" when both are running.
 
 ## Learning roadmap
 1. ✅ Setup, first server, routes

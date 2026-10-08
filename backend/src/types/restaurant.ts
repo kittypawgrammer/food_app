@@ -5,5 +5,4 @@ export interface Restaurant {
   rating?: number;
 }
 
-export type CreateRestaurantDto = Omit<Restaurant, 'id'>;
 

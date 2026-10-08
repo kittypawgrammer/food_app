@@ -1,0 +1,13 @@
+export default function AboutPage() {
+  return (
+    <main className="p-8">
+      <h1 className="text-3xl font-bold">
+        About
+      </h1>
+
+      <p className="mt-3">
+        This is my About page.
+      </p>
+    </main>
+  );
+}

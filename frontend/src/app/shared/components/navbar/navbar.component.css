@@ -1,4 +1,0 @@
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 12px 24px; background: #ff5722; }
-.navbar a { color: #fff; text-decoration: none; margin-left: 16px; }
-.navbar .brand { margin-left: 0; font-weight: bold; font-size: 18px; }
-.navbar a.active { text-decoration: underline; }
